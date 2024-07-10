@@ -1,0 +1,14 @@
+Extract Certificate
+-------------------
+openssl.exe pkcs12 -in cert_2024.pfx -clcerts -nokeys -out server.crt
+
+
+Extract Private Key Encrypted
+--------------------------------
+openssl.exe pkcs12 -in cert_2024.pfx -nocerts -out private.key
+
+
+Convert to PEM format for Private Key  (RSA PRIVATE KEY)
+--------------------------------------------------------
+openssl.exe rsa -in private.key -outform PEM -out private-pem.key
+
